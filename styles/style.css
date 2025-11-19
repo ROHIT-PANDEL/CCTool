@@ -1,0 +1,267 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+select, input, button {
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.layer {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+#matrixDisplay {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+#playfairMatrix {
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+
+/* General Enhancements */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  max-width: 700px; /* Slightly narrower */
+  margin: 40px auto; /* More top/bottom margin */
+  background-color: #f4f7f6;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: calc(100% - 22px); /* Adjust for padding */
+  height: 100px; /* Slightly taller */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical; /* Allow vertical resize */
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+select, input[type="text"] {
+  /* display: block; */ /* Removed to allow inline elements */
+  margin: 5px 0 15px 0; /* More bottom margin */
+  padding: 10px;
+  width: calc(100% - 22px); /* Adjust for padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px 5px 15px 0; /* Adjusted margin */
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Mode Buttons Specific Styles */
+.mode-buttons {
+  display: flex; /* Arrange buttons side-by-side */
+  margin-bottom: 20px; /* Space below buttons */
+}
+
+.mode-button {
+  flex-grow: 1; /* Make buttons share space equally */
+  margin: 0 5px; /* Add space between buttons */
+  background-color: #bdc3c7; /* Default inactive color */
+  color: #333;
+}
+
+.mode-button.active {
+  background-color: #2ecc71; /* Active color (e.g., green) */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) inset; /* Inset shadow for active state */
+}
+
+.mode-button:first-child {
+  margin-left: 0;
+}
+
+.mode-button:last-child {
+  margin-right: 0;
+}
+
+/* Key Input Area */
+#keyInputDiv {
+    margin-bottom: 15px;
+}
+
+#keyInputDiv label {
+    display: inline-block; /* Keep label and input on same line if space */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#keyInputDiv input[type="text"] {
+    width: calc(100% - 150px); /* Adjust width */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+#keyInputDiv button {
+    display: inline-block !important; /* Override default block */
+    width: auto; /* Auto width for button */
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+/* Checkbox Style */
+label input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Layer Styles */
+.layer {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.layer label {
+    margin-bottom: 8px;
+}
+
+.layer select,
+.layer input[type="text"] {
+    margin-bottom: 10px;
+}
+
+.layerKeyDiv {
+    margin-top: 10px;
+}
+
+.layerKeyDiv label {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.layerKeyDiv input[type="text"] {
+    width: calc(100% - 200px); /* Adjust */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+.layerKeyDiv button {
+    display: inline-block !important;
+    width: auto;
+    vertical-align: middle;
+    margin-bottom: 0;
+    padding: 8px 12px; /* Smaller padding for layer buttons */
+    font-size: 0.9rem;
+}
+
+/* Matrix Display */
+#matrixDisplay {
+  background: #e8f4fd;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #bde0fe;
+  margin-top: 20px;
+}
+
+#matrixDisplay h3 {
+    margin-top: 0;
+    color: #1e4f7a;
+}
+
+#playfairMatrix {
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #keyInputDiv input[type="text"],
+    .layerKeyDiv input[type="text"] {
+        width: calc(100% - 130px); /* Adjust for smaller screens */
+    }
+}
+
