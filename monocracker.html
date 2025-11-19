@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monoalphabetic Cipher Cracker</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/monocracker.css" />
+</head>
+<body>
+  <h1>Monoalphabetic Cipher Cracker</h1>
+
+  <div class="nav-links">
+    <a href="index.html">← Back to Encryption/Decryption</a>
+  </div>
+
+  <textarea id="cipherText" placeholder="Enter cipher text to crack..."></textarea>
+
+  <div class="options-container">
+    <div class="option-group">
+      <label>Cracking Method:</label>
+      <div class="mode-buttons">
+        <button id="frequencyBtn" class="mode-button active">Frequency Analysis</button>
+        <button id="bruteForceBtn" class="mode-button">Brute Force</button>
+        <button id="knownPlaintextBtn" class="mode-button">Known Plaintext</button>
+      </div>
+    </div>
+
+    <div id="frequencyOptions" class="option-panel">
+      <p>This method analyzes letter frequencies in the ciphertext and compares them with standard English letter frequencies.</p>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" id="showFrequencyChart" checked />
+          Show frequency chart
+        </label>
+      </div>
+    </div>
+
+    <div id="bruteForceOptions" class="option-panel" style="display: none;">
+      <p>This method tries different key combinations using hill-climbing optimization to find possible solutions.</p>
+      <div class="form-group">
+        <label for="maxResults">Maximum results to show:</label>
+        <input type="number" id="maxResults" value="5" min="1" max="20" />
+      </div>
+    </div>
+
+    <div id="knownPlaintextOptions" class="option-panel" style="display: none;">
+      <p>This method uses known plaintext to help crack the cipher. Enter a portion of the plaintext that you know corresponds to the ciphertext.</p>
+      <div class="form-group">
+        <label for="knownPlaintextInput">Known Plaintext:</label>
+        <textarea id="knownPlaintextInput" placeholder="Enter known plaintext..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <button id="crackBtn">Crack Cipher</button>
+
+  <div id="statusMessage" style="display: none;">Processing...</div>
+
+  <div id="resultsContainer" style="display: none;">
+    <h2>Results</h2>
+    
+    <div id="frequencyChartContainer" style="display: none;">
+      <h3>Letter Frequency Analysis</h3>
+      <div id="frequencyChart" class="chart-container"></div>
+    </div>
+    
+    <div id="possibleKeysContainer">
+      <h3>Possible Keys</h3>
+      <div id="keysList"></div>
+    </div>
+    
+    <div id="decryptedResultsContainer">
+      <h3>Decrypted Text</h3>
+      <div id="decryptedResults"></div>
+    </div>
+  </div>
+
+  <script src="/scripts/monoalphabetic.js" type="module"></script>
+  <script src="/scripts/monocracker.js" type="module"></script>
+</body>
+</html>

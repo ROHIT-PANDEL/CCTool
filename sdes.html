@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simplified DES (S-DES)</title>
+  <link rel="stylesheet" href="/styles/sdes.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+  <h1>Simplified DES (S-DES)</h1>
+
+  <div class="nav-links">
+    <a href="index.html">← Back to Encryption/Decryption</a>
+  </div>
+
+  <div class="options-container">
+    <div class="option-group">
+      <label>Mode:</label>
+      <div class="mode-buttons">
+        <button id="encryptBtn" class="mode-button active">Encrypt</button>
+        <button id="decryptBtn" class="mode-button">Decrypt</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="keyInput">10-bit Key:</label>
+      <input type="text" id="keyInput" placeholder="Enter 10-bit key (e.g., 1010000010)" maxlength="10" />
+    </div>
+
+    <div class="input-group">
+      <label for="textInput">8-bit <span id="textLabel">Plaintext</span>:</label>
+      <input type="text" id="textInput" placeholder="Enter 8-bit text (e.g., 10101010)" maxlength="8" />
+    </div>
+  </div>
+
+  <button id="processBtn">Encrypt</button>
+
+  <div id="statusMessage" style="display: none;">Processing...</div>
+
+  <div id="resultsContainer" style="display: none;">
+    <h2>Results</h2>
+    
+    <div class="result-section">
+      <h3>Key Generation</h3>
+      <div class="step-container">
+        <div class="step">
+          <div class="step-title">Initial Key (10 bits)</div>
+          <div class="step-content" id="initialKey"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After P10</div>
+          <div class="step-content" id="afterP10"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">Split</div>
+          <div class="step-content">
+            Left: <span id="leftHalf"></span><br>
+            Right: <span id="rightHalf"></span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-title">After LS-1</div>
+          <div class="step-content" id="afterLS1"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">K1 (after P8)</div>
+          <div class="step-content" id="k1"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After LS-2</div>
+          <div class="step-content" id="afterLS2"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">K2 (after P8)</div>
+          <div class="step-content" id="k2"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="result-section">
+      <h3>Encryption Process</h3>
+      <div class="step-container">
+        <div class="step">
+          <div class="step-title"><span id="inputLabel">Plaintext</span> (8 bits)</div>
+          <div class="step-content" id="inputText"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After Initial Permutation (IP)</div>
+          <div class="step-content" id="afterIP"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">Split</div>
+          <div class="step-content">
+            Left: <span id="ipLeft"></span><br>
+            Right: <span id="ipRight"></span>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Round 1</h4>
+      <div class="step-container">
+        <div class="step">
+          <div class="step-title">f Function Output</div>
+          <div class="step-content" id="round1F"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After XOR with Left Half</div>
+          <div class="step-content" id="round1XOR"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After Round 1</div>
+          <div class="step-content">
+            Left: <span id="round1Left"></span><br>
+            Right: <span id="round1Right"></span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-title">After Swap</div>
+          <div class="step-content">
+            Left: <span id="swapLeft"></span><br>
+            Right: <span id="swapRight"></span>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Round 2</h4>
+      <div class="step-container">
+        <div class="step">
+          <div class="step-title">f Function Output</div>
+          <div class="step-content" id="round2F"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After XOR with Left Half</div>
+          <div class="step-content" id="round2XOR"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">After Round 2</div>
+          <div class="step-content">
+            Left: <span id="round2Left"></span><br>
+            Right: <span id="round2Right"></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-container">
+        <div class="step">
+          <div class="step-title">Before Final Permutation</div>
+          <div class="step-content" id="beforeFP"></div>
+        </div>
+        <div class="step">
+          <div class="step-title">Final <span id="outputLabel">Ciphertext</span></div>
+          <div class="step-content" id="outputText"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/scripts/sdes.js" type="module"></script>
+  <script src="/scripts/sdes-ui.js" type="module"></script>
+</body>
+</html>
