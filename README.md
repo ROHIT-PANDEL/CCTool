@@ -4,9 +4,9 @@
 CCTool is a lightweight, browser-based and script-friendly toolkit designed to perform classical cryptography operations, text transformations, and multi-layer encryption workflows. It provides an interface for algorithms such as Caesar, Monoalphabetic, Playfair, Vigenère, Rail Fence, and Row-Column Transposition, allowing users to encrypt, decrypt, and analyze text directly in the browser without installing software. The tool focuses on simplicity, transparency of operations, and educational value for students learning classical cipher mechanisms.
 
 ## Links
-github - `github-link-to-be-updated` 
+github - `https://github.com/ROHIT-PANDEL/CCTool` 
 
-vercel = `vercel-link-to-be-updated`
+vercel = `https://cctool-delta.vercel.app/`
 
 ## Preview
 ![output-preview](/output/output-preview.jpeg)
