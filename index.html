@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CCToolkit</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/monocracker.css">
+</head>
+<body>
+  <h1>CCToolkit: Encryption and Decryption</h1>
+
+  <div class="nav-links">
+    <a href="monocracker.html">GO to Monoalphabetic Crack</a><br>
+    <a href="sdes.html">GO to S-DES Algorithm</a>
+  </div>
+
+  <textarea id="inputText" placeholder="Enter Plain or Cipher Text..."></textarea>
+
+  <label>Mode:</label>
+  <div class="mode-buttons">
+    <button id="encryptBtn" class="mode-button active">Encrypt</button>
+    <button id="decryptBtn" class="mode-button">Decrypt</button>
+  </div>
+
+  <label>
+    <input type="checkbox" id="multiLayer">
+    Enable Multi-Layer Encryption
+  </label>
+
+  <!-- Single Layer Selection -->
+  <div id="singleLayerContainer">
+    <label for="algo">Choose Algorithm:</label>
+    <select id="algo">
+      <option value="">--Select--</option>
+      <option value="caesar">Caesar Cipher</option>
+      <option value="mono">Monoalphabetic Cipher</option>
+      <option value="playfair">Playfair Cipher</option>
+      <option value="vigenere">Vigenère Cipher</option>
+      <option value="railfence">Rail Fence Cipher</option>
+      <option value="rowcolumn">Row-Column Transposition</option>
+    </select>
+
+    <div id="keyInputDiv">
+      <label for="keyInput">Key:</label>
+      <input type="text" id="keyInput" placeholder="Enter Key..." />
+      <button id="generateKey" style="display:none;">Generate Random Key</button>
+    </div>
+  </div>
+
+  <!-- Multi-Layer Container -->
+  <div id="layersContainer" style="display:none;">
+    <!-- Layer 1 -->
+    <div class="layer-box" id="layer1">
+      <label>Layer 1 Algorithm:</label>
+      <select class="layerAlgo">
+        <option value="">--Select--</option>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="mono">Monoalphabetic Cipher</option>
+        <option value="playfair">Playfair Cipher</option>
+        <option value="vigenere">Vigenère Cipher</option>
+        <option value="railfence">Rail Fence Cipher</option>
+        <option value="rowcolumn">Row-Column Transposition</option>
+      </select>
+      <div class="layerKeyDiv">
+        <label>Key:</label>
+        <input type="text" class="layerKey" placeholder="Enter Key...">
+        <button class="generateLayerKey">Generate Key</button>
+      </div>
+    </div>
+
+    <!-- Layer 2 -->
+    <div class="layer-box" id="layer2">
+      <label>Layer 2 Algorithm:</label>
+      <select class="layerAlgo">
+        <option value="">--Select--</option>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="mono">Monoalphabetic Cipher</option>
+        <option value="playfair">Playfair Cipher</option>
+        <option value="vigenere">Vigenère Cipher</option>
+        <option value="railfence">Rail Fence Cipher</option>
+        <option value="rowcolumn">Row-Column Transposition</option>
+      </select>
+      <div class="layerKeyDiv">
+        <label>Key:</label>
+        <input type="text" class="layerKey" placeholder="Enter Key...">
+        <button class="generateLayerKey">Generate Key</button>
+      </div>
+    </div>
+
+    <!-- Layer 3 -->
+    <div class="layer-box" id="layer3">
+      <label>Layer 3 Algorithm:</label>
+      <select class="layerAlgo">
+        <option value="">--Select--</option>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="mono">Monoalphabetic Cipher</option>
+        <option value="playfair">Playfair Cipher</option>
+        <option value="vigenere">Vigenère Cipher</option>
+        <option value="railfence">Rail Fence Cipher</option>
+        <option value="rowcolumn">Row-Column Transposition</option>
+      </select>
+      <div class="layerKeyDiv">
+        <label>Key:</label>
+        <input type="text" class="layerKey" placeholder="Enter Key...">
+        <button class="generateLayerKey">Generate Key</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="processBtn">Process</button>
+
+  <textarea id="outputText" placeholder="Result..." readonly></textarea>
+
+  <div id="matrixDisplay" style="margin-top: 20px; display: none;">
+    <h3>Playfair Matrix</h3>
+    <pre id="playfairMatrix"></pre>
+  </div>
+
+  <script src="/scripts/script.js" type="module"></script>
+</body>
+</html>
